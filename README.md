@@ -5,7 +5,7 @@
 ## Key Features
 
 ### 1. **Quick Magic Wand**
-The **Quick Magic Wand** is a powerful tool that lets you interact with any content on a webpage using AI agents. With just a right-click on any text or editable element, you can:
+The **Quick Magic Wand** is a powerful tool that lets you interact with any content on a webpage using AI agents in your cursor:
 
 - **Create Content:** Instantly generate content based on your prompts.
 - **Rewrite Text:** Let the AI rewrite and improve your existing content.
