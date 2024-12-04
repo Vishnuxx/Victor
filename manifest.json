@@ -1,0 +1,44 @@
+{
+	"manifest_version": 3,
+	"name": "Victor2",
+	"description": "Chrome Built-in AI companion",
+	"action": {
+		"default_popup": "src/pages/popup/index.html",
+		"default_icon": {
+			"64": "logo3.png"
+		}
+	},
+	"side_panel": {
+		"default_path": "src/pages/sidebar/index.html"
+	},
+
+	"permissions": ["activeTab", "aiLanguageModelOriginTrial", "tabs", "tabGroups", "history", "sidePanel", "storage", "contextMenus", "scripting", "nativeMessaging"],
+	"trial_tokens": ["An/ksZqeoUBYTci8yBG7PMEYjH8SZPfcofaNeMYUlZHJV0mEnYiBeC+8PGNHArss9PiLjW/tueaXoiMUQqc7IwoAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vaGRiaGZiYW5naWxkbm1lZWZkZG9lZGVqZWNva2NvamgiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"],
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["src/services/NotifyMe/content.ts", "src/pages/content/index.tsx"],
+			"css": ["contentStyle.css"]
+		}
+	],
+	
+	"background": {
+		"service_worker": "/src/pages/background/index.ts",
+		"type": "module"
+	},
+	"icons": {
+		"128": "tooltip.png"
+	},
+	"content_security_policy": {
+		"extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+	},
+	"web_accessible_resources": [
+		{
+			"resources": [ "contentStyle.css", "icon-128.png", "icon-32.png" , "tooltip.png"],
+			"matches": [],
+			"extension_ids": []
+		}
+		
+	]
+	
+}
